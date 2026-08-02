@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Xivana 💗</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<audio id="music" loop>
+    <source src="from-the-start.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ================= PIN SCREEN ================= -->
+
+<div id="pinScreen">
+
+    <div class="pin-box">
+
+        <h1>🎂</h1>
+
+        <h2>Private Birthday Gift</h2>
+
+        <p>
+            A little surprise made especially for you.
+            <br>
+            Enter the PIN to continue 💗
+        </p>
+
+        <input
+            type="password"
+            id="pinInput"
+            readonly
+            placeholder="••••">
+
+        <div class="keypad">
+
+            <button onclick="addPin('1')">1</button>
+            <button onclick="addPin('2')">2</button>
+            <button onclick="addPin('3')">3</button>
+
+            <button onclick="addPin('4')">4</button>
+            <button onclick="addPin('5')">5</button>
+            <button onclick="addPin('6')">6</button>
+
+            <button onclick="addPin('7')">7</button>
+            <button onclick="addPin('8')">8</button>
+            <button onclick="addPin('9')">9</button>
+
+            <button onclick="clearPin()">⌫</button>
+            <button onclick="addPin('0')">0</button>
+            <button onclick="checkPin()">💗</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= WEBSITE ================= -->
+
+<div id="website" class="hidden">
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <h1>Happy Birthday</h1>
+
+    <h2>Xivana 💗</h2>
+
+    <p>
+
+        Happy Birthday to one of the most
+        amazing people I've ever met online.
+
+        <br><br>
+
+        I hope this little website can make
+        your special day even brighter,
+        because today is all about you.
+
+    </p>
+
+    <button onclick="openHeart()">
+
+        Open My Heart 💗
+
+    </button>
+
+</section>
+
+<!-- ================= BOTTLE LETTER ================= -->
+
+<section id="bottleSection" class="hidden">
+
+    <h2>A Letter For You 💌</h2>
+
+    <p class="tap-text">
+
+        Tap the bottle to read my birthday letter.
+
+    </p>
+
+    <div id="bottleArea">
+
+        <div id="bottle" onclick="breakBottle()">
+
+            🍾
+
+        </div>
+
+        <div id="flowers"></div>
+
+    </div>
+
+    <div id="letterContainer">
+
+        <div class="letter-paper">
+
+            <!-- Letter muncul dari script.js -->
+            <div id="letterText"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery">
+
+    <h2>Favorite Memories 📸</h2>
+
+    <p>
+        Some of my favorite pictures of you.
+    </p>
+
+    <div class="gallery-grid">
+
+        <img src="photo1.jpg" alt="">
+        <img src="photo2.jpg" alt="">
+
+        <img src="photo3.jpg" alt="">
+        <img src="photo4.jpg" alt="">
+
+        <img src="photo5.jpg" alt="">
+        <img src="photo6.jpg" alt="">
+
+        <img src="photo7.jpg" alt="">
+        <img src="photo8.jpg" alt="">
+
+        <img src="photo9.jpg" alt="">
+        <img src="photo10.jpg" alt="">
+
+    </div>
+
+</section>
+
+<!-- ================= LOVE QUIZ ================= -->
+
+<section class="quiz-section">
+
+    <h2>Birthday Quiz 💗</h2>
+
+    <p>
+
+        Answer all the questions correctly
+        to unlock your final birthday surprise.
+
+    </p>
+
+    <div id="quizBox">
+
+        <div class="question active">
+
+            <h3>
+                1. What's our biggest goal?
+            </h3>
+
+            <button onclick="checkAnswer(this,false)">
+                A. Meet someday
+            </button>
+
+            <button onclick="checkAnswer(this,false)">
+                B. Travel together
+            </button>
+
+            <button onclick="checkAnswer(this,false)">
+                C. Stay best friends forever
+            </button>
+
+            <button onclick="checkAnswer(this,true)">
+                D. All of the above 💗
+            </button>
+
+        </div>
+
+              <div class="question">
+
+            <h3>
+                2. Who sends more random messages?
+            </h3>
+
+            <button onclick="checkAnswer(this,false)">
+                A. Me
+            </button>
+
+            <button onclick="checkAnswer(this,false)">
+                B. You
+            </button>
+
+            <button onclick="checkAnswer(this,false)">
+                C. Prabowo
+            </button>
+
+            <button onclick="checkAnswer(this,true)">
+                D. Both of us 💗
+            </button>
+
+        </div>
+
+        <div class="question">
+
+            <h3>
+                3. What do I wish for you the most?
+            </h3>
+
+            <button onclick="checkAnswer(this,false)">
+                A. Happiness
+            </button>
+
+            <button onclick="checkAnswer(this,false)">
+                B. Good health
+            </button>
+
+            <button onclick="checkAnswer(this,false)">
+                C. Success
+            </button>
+
+            <button onclick="checkAnswer(this,true)">
+                D. All of the above 💗
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- QUIZ SUCCESS -->
+
+    <div id="quizSuccess" class="hidden">
+
+        <h2>🎉 Congratulations! 🎉</h2>
+
+        <img src="special.jpg"
+             class="special-photo"
+             alt="Special Photo">
+
+        <p>
+
+            You unlocked the final surprise! 💗
+
+            <br><br>
+
+            Thank you for answering everything correctly.
+
+            I hope this little gift makes your birthday
+            a little more special.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= FINAL WISH ================= -->
+
+<section class="final">
+
+    <h2>Happy Birthday 💗</h2>
+
+    <h3>To Xivana</h3>
+
+    <p>
+
+        Another year older,
+        another year more amazing.
+
+        <br><br>
+
+        Thank you for being
+        such a wonderful virtual best friend.
+
+        Even though we're far apart,
+        you've always been someone
+        I can count on.
+
+        <br><br>
+
+        I hope every dream you have
+        slowly becomes reality.
+
+        I hope happiness,
+        good health,
+        success,
+        peace,
+        and endless smiles
+        always follow you wherever you go.
+
+        <br><br>
+
+        Never stop believing in yourself,
+        because I know you're capable
+        of achieving incredible things.
+
+        <br><br>
+
+        Keep shining,
+        keep smiling,
+        and keep being the amazing person
+        that you are.
+
+        <br><br>
+
+        You deserve all the love,
+        kindness,
+        and beautiful moments
+        this world has to offer.
+
+    </p>
+
+</section>
+
+<!-- ================= CLOSING ================= -->
+
+<section class="closing">
+
+    <h2>Made With Love 💗</h2>
+
+    <p>
+
+        Thank you for visiting this little birthday website.
+
+        <br><br>
+
+        No matter how many birthdays come,
+        I hope we'll always have reasons
+        to laugh together,
+        support each other,
+        and stay close despite the distance.
+
+    </p>
+
+    <div class="closing-card">
+
+        <span>From</span>
+
+        <h3>Kaileen 🤍</h3>
+
+        <span>To</span>
+
+        <h3>Xivana 💗</h3>
+
+    </div>
+
+</section>
+
+  <!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <p>
+        Happy Birthday, Xivana 🎂💗
+    </p>
+
+    <span>
+        Made with love by <strong>Kaileen</strong> ✨
+    </span>
+
+</footer>
+
+</div>
+<!-- End Website -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
